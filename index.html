@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Fake OS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Setup Screen -->
+    <div id="setup-screen" class="screen">
+        <div class="setup-container">
+            <h2>Welcome to Your New OS</h2>
+            <p>Please set up your PIN to get started.</p>
+            <input type="password" id="pin" maxlength="4" placeholder="Enter 4-digit PIN">
+            <button onclick="savePin()">Save PIN</button>
+        </div>
+    </div>
+
+    <!-- Lock Screen -->
+    <div id="lock-screen" class="screen hidden">
+        <div class="lock-container">
+            <h2>Enter PIN</h2>
+            <input type="password" id="lock-pin" maxlength="4" placeholder="Enter PIN">
+            <button onclick="unlock()">Unlock</button>
+        </div>
+    </div>
+
+    <!-- Home Screen -->
+    <div id="home-screen" class="screen hidden">
+        <div id="status-bar">
+            <span id="time">9:42 AM</span>
+            <span id="battery">100%</span>
+        </div>
+        <div id="clock" class="widget">
+            <h1 id="time-display">9:42 AM</h1>
+        </div>
+        <div id="apps">
+            <div class="app-icon" onclick="openApp('browser')">
+                <img src="icons/browser-icon.png" alt="Browser">
+                <span>Browser</span>
+            </div>
+            <div class="app-icon" onclick="openApp('settings')">
+                <img src="icons/settings-icon.png" alt="Settings">
+                <span>Settings</span>
+            </div>
+            <!-- More apps here -->
+        </div>
+        <div id="dock">
+            <div class="dock-icon" onclick="openApp('phone')">
+                <img src="icons/phone-icon.png" alt="Phone">
+            </div>
+            <div class="dock-icon" onclick="openApp('messages')">
+                <img src="icons/messages-icon.png" alt="Messages">
+            </div>
+            <div class="dock-icon" onclick="openApp('camera')">
+                <img src="icons/camera-icon.png" alt="Camera">
+            </div>
+        </div>
+    </div>
+
+    <!-- App Viewer -->
+    <div id="app-viewer" class="screen hidden">
+        <iframe id="app-frame" src=""></iframe>
+        <div id="app-header">
+            <button onclick="closeApp()">Close</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
